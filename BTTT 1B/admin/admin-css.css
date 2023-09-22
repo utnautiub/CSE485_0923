@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.footer a {
+  font-weight: bold;
+  color: black;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-body a {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.card-body p {
+  font-size: 42px;
+}
+
+.navbar-brand {
+  color: black;
+}
+
+.nav-item a {
+  color: black;
+}
+
+.active {
+  font-weight: bold;
+  color: brown;
+}
