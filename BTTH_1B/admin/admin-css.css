@@ -36,3 +36,13 @@
   font-weight: bold;
   color: brown;
 }
+
+.input-group .form-control {
+  box-shadow: none;
+}
+
+.button-add-back {
+  display: flex;
+  justify-content: end;
+  padding: 12px 0 18px;
+}

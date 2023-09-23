@@ -27,7 +27,9 @@
                     <input type="checkbox">Remember Me
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Login" class="btn float-right login_btn">
+                    <a href="#" onclick="window.location.href='./admin/index.php';">
+                        <input type="button" value="Login" class="btn float-right login_btn">
+                    </a>
                 </div>
             </form>
         </div>

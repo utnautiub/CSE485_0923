@@ -20,8 +20,8 @@
             require ('./layout/header.php') 
         ?>
         <div class="category-management php">
-            <a href="./edit_category.php">
-                <button type="button" class="btn btn-success">Thêm mới</button>
+            <a href="./add_category.php">
+                <button type="button" class="btn btn-success m-2">Thêm mới</button>
             </a>
             <table class="table">
                 <thead>
@@ -36,13 +36,13 @@
                     <tr>
                         <th scope="row">1</th>
                         <td>Nhạc trữ tình</td>
-                        <td><i class="bi bi-pencil-square"></i></td>
+                        <td><a href="./edit_category.php"><i class="bi bi-pencil-square"></i></a></td>
                         <td><i class="bi bi-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>Nhạc cách mạng</td>
-                        <td><i class="bi bi-pencil-square"></i></td>
+                        <td><a href="./edit_category.php"><i class="bi bi-pencil-square"></i></a></td>
                         <td><i class="bi bi-trash"></i></td>
                     </tr>
                 </tbody>
