@@ -16,16 +16,10 @@
 <body>
     <div class="container p-5">
         <?php
-            require ('./header.php') 
-        ?>
-        <?php
-            require ('./slider.php') 
-        ?>
-        <?php
-            require ('./content.php') 
-        ?>
-        <?php
-            require ('./footer.php') 
+        require('./layout/header.php');
+        require('./layout/slider.php');
+        require('./layout/content.php');
+        require('./layout/footer.php');
         ?>
     </div>
 </body>

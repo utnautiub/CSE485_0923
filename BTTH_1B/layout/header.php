@@ -1,8 +1,8 @@
 <div class="header row">
     <div class="col-6 header-left">
         <img src="./image/logo.jpg" alt="logo" width="200px" height="100px">
-        <a href="./index.php">Trang Chủ</a>
-        <a href="./login.php">Đăng Nhập</a>
+        <a href="../index.php">Trang Chủ</a>
+        <a href="../../BTTH_1B/login.php">Đăng Nhập</a>
     </div>
 
     <div class="col-6 header-right">
