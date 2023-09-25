@@ -17,7 +17,13 @@
 <body>
     <div class="container p-5">
         <?php
+            include "../connect.php";
             require ('./layout/header.php') 
+        ?>
+        <?php
+             if(isset($_GET['message'])){
+            echo "<div id='alert' class='alert alert-{$_GET['type']}'>{$_GET['message']}</div>";
+            }
         ?>
         <div class="category-management php">
             <a href="./add_category.php">
@@ -33,18 +39,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $data = Mysql::select("select * from theloai order by ma_tloai");
+                        foreach($data as $row):
+                            $id = $row['ma_tloai'];
+                            $ten_tloai = $row['ten_tloai'];
+                   ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Nhạc trữ tình</td>
-                        <td><a href="./edit_category.php"><i class="bi bi-pencil-square"></i></a></td>
-                        <td><i class="bi bi-trash"></i></td>
+                        <th scope="row"><?php echo $id;?></th>
+                        <td><?php echo $ten_tloai;?></td>
+                        <td><a href="./edit_category.php?id=<?php echo $id;?>"><i class="bi bi-pencil-square"></i></a>
+                        </td>
+                        <td><a href="../manager/delete_category_manager.php?ma_tloai=<?php echo $id;?>"><i
+                                    class="bi bi-trash"></i></a></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Nhạc cách mạng</td>
-                        <td><a href="./edit_category.php"><i class="bi bi-pencil-square"></i></a></td>
-                        <td><i class="bi bi-trash"></i></td>
-                    </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
         </div>

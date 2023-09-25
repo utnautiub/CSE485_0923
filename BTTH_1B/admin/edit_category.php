@@ -20,20 +20,25 @@
             require ('./layout/header.php') 
         ?>
         <h3 style="text-align: center; font-weight: 700;" class="my-3">SỬA THÔNG TIN THỂ LOẠI</h3>
-        <div class="input-group flex-nowrap my-2">
-            <span class="input-group-text" id="addon-wrapping">Mã Thể Loại</span>
-            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-        </div>
-        <div class="input-group flex-nowrap my-2">
-            <span class="input-group-text" id="addon-wrapping">Tên Thể Loại</span>
-            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-        </div>
-        <div class="button-add-back">
-            <button type="button" class="btn btn-success m-2">Lưu Lại</button>
-            <a href="./category.php">
-                <button type="button" class="btn btn-warning m-2">Quay Lại</button>
-            </a>
-        </div>
+        <form method="post" action="../manager/update_category_manager.php">
+            <div class="input-group flex-nowrap my-2">
+                <span class="input-group-text" id="addon-wrapping">Mã Thể Loại</span>
+                <input name="ma_tloai" readonly value="<?= $_GET['id'] ?>" type="text" class="form-control"
+                    aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap my-2">
+                <span class="input-group-text" id="addon-wrapping">Tên Thể Loại</span>
+                <input name="ten_tloai" type="text" class="form-control" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div class="button-add-back">
+                <button type="submit" class="btn btn-success m-2">Lưu Lại</button>
+                <a href="./category.php">
+                    <button type="button" class="btn btn-warning m-2">Quay Lại</button>
+                </a>
+            </div>
+        </form>
+
         <?php
             require ('./layout/footer.php') 
         ?>

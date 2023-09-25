@@ -20,16 +20,25 @@
             require ('./layout/header.php') 
         ?>
         <h3 style="text-align: center; font-weight: 700;" class="my-3">THÊM MỚI THỂ LOẠI</h3>
-        <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping">Tên thể loại</span>
-            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
-        </div>
-        <div class="button-add-back">
-            <button type="button" class="btn btn-success m-2">Thêm</button>
-            <a href="./category.php">
-                <button type="button" class="btn btn-warning m-2">Quay Lại</button>
-            </a>
-        </div>
+        <?php
+             if(isset($_GET['message'])){
+            echo "<div class='alert alert-{$_GET['type']}'>{$_GET['message']}</div>";
+            }
+       ?>
+
+        <form method="post" action="../manager/add_category_manager.php">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">Tên thể loại</span>
+                <input name="ten_tloai" type="text" class="form-control" aria-label="Username"
+                    aria-describedby="addon-wrapping">
+            </div>
+            <div class="button-add-back">
+                <button type="submit" class="btn btn-success m-2">Thêm</button>
+                <a href="./category.php">
+                    <button type="button" class="btn btn-warning m-2">Quay Lại</button>
+                </a>
+            </div>
+        </form>
         <?php
             require ('./layout/footer.php') 
         ?>
