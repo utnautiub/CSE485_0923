@@ -1,2 +1,2 @@
 <?php
-echo "Users";
+echo "User";
