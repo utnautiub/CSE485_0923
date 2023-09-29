@@ -1,13 +1,14 @@
 <?php
-
-
+// Nhập các lớp PHPMailer vào không gian tên toàn cầu
+// Những dòng này phải ở đầu mã của bạn, không phải bên trong một hàm
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+// Tải autoload của Composer
 require 'vendor/autoload.php';
 
-
+// Tạo một thể hiện; đặt `true` để bật việc xử lý các ngoại lệ
 $mail = new PHPMailer(true);
 
 try {
@@ -24,17 +25,17 @@ try {
     $mail->Port       = 465;                                // Cổng TCP để kết nối cho giao thức SMTPS (SSL)
     // Người nhận
     $mail->setFrom('utnautiub@gmail.com', 'Bùi Tuấn Tú');
-    $mail->addAddress('lethutrang2k3mh@gmail.com'); 
-    $mail->addAddress('buituantucontact@gmail.com'); 
+    $mail->addAddress('dungkt@wru.vn', 'Kiều Tuấn Dũng'); // Add a recipient
+    $mail->addAddress('buituantucontact@gmail.com'); // Name is optional
     // Tệp đính kèm
     // $mail->addAttachment('/var/tmp/file.tar.gz');               // Thêm tệp đính kèm
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');          // Tên tệp đính kèm (tùy chọn)
 
     // Nội dung
     $mail->isHTML(true);                                        // Đặt định dạng email thành HTML
-    $mail->Subject = 'XỊN VLLLLLLL';
-    $mail->Body    = 'Xịn <h1>VOÃI</h1>';  
-    $mail->AltBody = 'Xịn VOÃI';
+    $mail->Subject = 'Điểm Danh 29/09/2023 - Bùi Tuấn Tú - 2151163736';
+    $mail->Body    = 'Mailer utnautiub@gmail.com to <b>dungkt@wru.vn</b>';
+    $mail->AltBody = 'Mailer utnautiub@gmail.com to dungkt@wru.vn';
 
     $mail->send();
     echo 'Thư đã được gửi';
