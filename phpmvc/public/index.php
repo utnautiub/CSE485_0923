@@ -14,7 +14,7 @@ if($controller=='home'){
     $homeController = new HomeController();
     $homeController->index();
 }elseif ($controller=='patient'){
-    require_once APP_ROOT.'/app/controllers/PatientController.php';
+    require_once APP_ROOT.'/app/controllers/'. ($controller) . 'Controller.php';
     $PatientController = new PatientController();
     $PatientController->index();
 }else{

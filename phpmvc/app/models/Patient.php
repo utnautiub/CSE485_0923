@@ -52,4 +52,7 @@ class Patient{
         $this->fullname = $fullname;
     }
 
+    function selectAllOrderById() {
+        
+    }
 }

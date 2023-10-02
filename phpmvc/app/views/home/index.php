@@ -38,8 +38,8 @@
                       <td><?= $patient->getDateOfBirth(); ?></td>
                       <td><?= $patient->getAddress(); ?></td>
                       <td><?= $patient->getMobile(); ?></td>
-                      <td><a href="<?= DOMAIN.'/app/views/patient/edit.php?id='.$patient->getId();?>"><i class="bi bi-pencil-square"></i></a></td>
-                      <td><a href="<?= DOMAIN.'/app/views/patient/remove.php?id='.$patient->getId();?>""><i class="bi bi-trash3"></i></a></td>
+                      <td><a href="<?= DOMAIN.'/app/views/patient/edit.php?id='.$patient->edit();?>"><i class="bi bi-pencil-square"></i></a></td>
+                      <td><a href="<?= DOMAIN.'/app/views/patient/remove.php?id='.$patient->remove();?>""><i class="bi bi-trash3"></i></a></td>
                     </tr>
             <?php
                 }
