@@ -17,6 +17,11 @@
 <body>
     <div class="container p-5">
         <?php
+            session_start();
+            if(!isset($_SESSION['loginCategory'])){
+                echo "chưa vào được";
+                header('Location:http://localhost/CSE485_0923/BTTH_1B/login.php');
+            }
             include "../connect.php";
             require ('./layout/header.php') 
         ?>
@@ -44,41 +49,46 @@
                         foreach($data as $row):
                             $id = $row['ma_tloai'];
                             $ten_tloai = $row['ten_tloai'];
-                   ?>
+                    ?>
                     <tr>
                         <th scope="row"><?php echo $id;?></th>
                         <td><?php echo $ten_tloai;?></td>
                         <td><a href="./edit_category.php?id=<?php echo $id;?>"><i class="bi bi-pencil-square"></i></a>
                         </td>
                         <td>
-                            <button data-bs-toggle="modal" data-bs-target="#modal<?=$id?>">
-                                <i class="bi bi-trash3"></i>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#modelId<?=$id?>">
+                                <i class="bi bi-trash"></i>
                             </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modelId<?=$id?>" tabindex="-1" role="dialog"
+                                aria-labelledby="modelTitleId" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Body
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/CSE485_0923/BTTH_1B/perform/deleteTheLoai.php?id=<?php echo $id;?>"
+                                                class="btn btn-primary">Save</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <!-- Modal -->
-                    <div class="modal fade" id="modal<?=$id?>" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <a href="../manager/delete_category_manager.php?=$id<?= $id;?>"><button
-                                            type="button" class="btn btn-primary">Xác
-                                            nhận</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <?php endforeach ?>
                 </tbody>
             </table>

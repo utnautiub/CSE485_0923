@@ -17,6 +17,10 @@
 <body>
     <div class="container p-5">
         <?php
+            session_start();
+            if(!isset($_SESSION['loginSuccess'])){
+                header('Location:http://localhost/CSE485_0923/BTTH_1B/login.php');
+            }
             require ('./layout/header.php') 
         ?>
         <?php

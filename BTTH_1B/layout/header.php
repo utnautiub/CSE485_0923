@@ -1,8 +1,9 @@
 <div class="header row">
     <div class="col-6 header-left">
         <img src="./image/logo.jpg" alt="logo" width="200px" height="100px">
-        <a href="../../BTTH_1B/index.php">Trang Chủ</a>
-        <a href="../../BTTH_1B/login.php">Đăng Nhập</a>
+        <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/CSE485_0923/BTTH_1B/index.php">Trang Chủ</a>
+        <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/CSE485_0923/BTTH_1B/login.php">Đăng Nhập</a>
+        <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/CSE485_0923/BTTH_1B/admin/index.php">ADMIN</a>
     </div>
 
     <div class="col-6 header-right">

@@ -16,13 +16,13 @@
 <body>
     <div class="container p-5">
         <?php
-            require ('./header.php') 
+            require ("{$_SERVER['DOCUMENT_ROOT']}/CSE485_0923/BTTH_1B/layout/header.php") 
         ?>
         <?php
-            require ('./detail_content.php') 
+            require ("{$_SERVER['DOCUMENT_ROOT']}/CSE485_0923/BTTH_1B/detail_content.php") 
         ?>
         <?php
-            require ('./footer.php') 
+            require ("{$_SERVER['DOCUMENT_ROOT']}/CSE485_0923/BTTH_1B/layout/footer.php") 
         ?>
     </div>
 

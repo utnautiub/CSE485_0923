@@ -21,7 +21,11 @@
 <body>
     <div class="container p-5">
         <?php
-            require ('./layout/header.php') 
+        session_start();
+        if(isset($_SESSION['loginSuccess'])){
+
+        }
+            require ('./layout/header.php')
         ?>
 
         <div class="d-flex justify-content-center h-100">
@@ -35,27 +39,28 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form method="post"
+                        action="<?php $_SERVER['DOCUMENT_ROOT'] ?>/CSE485_0923/BTTH_1B/perform/login.php">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="username">
+                            <input name="userName" type="text" class="form-control" placeholder="username">
 
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="password">
+                            <input name="userPassword" type="password" class="form-control" placeholder="password">
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox">Remember Me
                         </div>
                         <div class="form-group">
-                            <a href="#" onclick="window.location.href='./admin/index.php';">
-                                <input type="button" value="Login" class="btn float-right login_btn">
-                            </a>
+                            <button type="submit" class="btn float-right login_btn">
+                                Login
+                            </button>
                         </div>
                     </form>
                 </div>

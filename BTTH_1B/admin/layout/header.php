@@ -8,7 +8,8 @@
                         <a class="nav-link" href="./index.php">Trang chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Trang ngoài</a>
+                        <a class="nav-link"
+                            href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/CSE485_0923/BTTH_1B/index.php">Trang ngoài</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./category.php">Thể loại</a>
